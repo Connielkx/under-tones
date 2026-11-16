@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Method | UNDER-tones: Searching Urban Soundscapes</title>
+<meta name="description" content="How the AR5801 UNDER-tones search workflow uses street view images, semantic segmentation and synthetic audio to find and interpret spaces beneath Singapore's elevated rail.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+  <nav class="sitenav" aria-label="Site">
+    <a class="brand" href="index.html">UNDER-tones<span class="brand-sub">: Searching Urban Soundscapes</span></a>
+    <ul>
+      <li><a href="index.html">Listen</a></li>
+      <li><a href="method.html" aria-current="page">Method</a></li>
+      <li><a href="generate.html">Generate</a></li>
+    </ul>
+  </nav>
+  <header class="masthead">
+    <p class="kicker">AR5801 | SEMESTER 1 AY2026/2027</p>
+    <h1>METHOD</h1>
+    <p class="subtitle">How the search workflow finds, describes and interprets the spaces beneath Singapore's elevated rail.</p>
+    <p class="instruction">The project reads street-level images to understand what each space is like, infers the sounds it is likely to hold, and uses that evidence to decide where and how to intervene.</p>
+  </header>
+
+
+  <section class="method-sec" aria-labelledby="m-b">
+    <div class="case-head m-head">
+      <h2 id="m-b">THE SEARCH WORKFLOW</h2>
+      <p class="tag">From hundreds of images to two design cases</p>
+    </div>
+    <p class="desc">Seven steps in three phases move from locating every space under the elevated rail to developing architectural responses.</p>
+      <div class="m-phase">
+        <p class="ba"><span>PHASE 1</span> IDENTIFY AND DESCRIBE</p>
+        <ol class="m-steps">
+        <li class="m-step">
+          <img src="assets/method/step1.jpg" width="440" height="440" loading="lazy" alt="Map of Singapore with sample points along the elevated rail lines.">
+          <div>
+            <h4><b>01</b> IDENTIFY</h4>
+            <p class="m-desc">Locate UNDER environments across Singapore</p>
+            <p class="m-tag">GIS + Rail + Pedestrian</p>
+            <p class="m-x">Rail lines and pedestrian routes are mapped together to place sample points along walkways beneath the elevated MRT and LRT tracks.</p>
+          </div>
+        </li>
+        <li class="m-step">
+          <img src="assets/method/step2.jpg" width="440" height="440" loading="lazy" alt="Street view image of a verge with trees in front of an MRT viaduct.">
+          <div>
+            <h4><b>02</b> COLLECT</h4>
+            <p class="m-desc">Retrieve and screen Street View images</p>
+            <p class="m-tag">Street View images</p>
+            <p class="m-x">A street-level image is retrieved at each point and screened for usable views of the space under the viaduct; 299 images were kept.</p>
+          </div>
+        </li>
+        <li class="m-step">
+          <img src="assets/method/step3.jpg" width="440" height="440" loading="lazy" alt="The same street view image overlaid with coloured segmentation classes.">
+          <div>
+            <h4><b>03</b> QUANTIFY</h4>
+            <p class="m-desc">Measure environmental composition</p>
+            <p class="m-tag">Semantic segmentation</p>
+            <p class="m-x">A Mask2Former model (Swin-Large, trained on Mapillary Vistas) labels every pixel. Labels are grouped into natural, mobility, rail, built and people shares of the image.</p>
+          </div>
+        </li>
+        </ol>
+      </div>
+      <div class="m-phase">
+        <p class="ba"><span>PHASE 2</span> CATEGORIZE AND PRIORITIZE</p>
+        <ol class="m-steps">
+        <li class="m-step">
+          <img src="assets/method/step4.jpg" width="440" height="440" loading="lazy" alt="Scatter plot of images coloured by visual cluster.">
+          <div>
+            <h4><b>04</b> CATEGORIZE</h4>
+            <p class="m-desc">Group similar visual environments</p>
+            <p class="m-tag">K-means clustering</p>
+            <p class="m-x">Images with similar composition profiles are grouped into visual clusters, such as natural-dominant or built-dominant environments.</p>
+          </div>
+        </li>
+        <li class="m-step">
+          <img src="assets/method/step5.jpg" width="440" height="440" loading="lazy" alt="Scatter plot highlighting the prioritised sites.">
+          <div>
+            <h4><b>05</b> EVALUATE</h4>
+            <p class="m-desc">Evaluate acoustic opportunity and spatial feasibility</p>
+            <p class="m-tag">Acoustic challenge and spatial feasibility</p>
+            <p class="m-x">Sites are scored for acoustic challenge and spatial feasibility, so attention goes where an intervention is both needed and possible.</p>
+          </div>
+        </li>
+        </ol>
+      </div>
+      <div class="m-phase">
+        <p class="ba"><span>PHASE 3</span> INTERPRET AND GENERATE</p>
+        <ol class="m-steps">
+        <li class="m-step">
+          <img src="assets/method/step6.jpg" width="440" height="440" loading="lazy" alt="Grey waveform of a synthetic soundscape.">
+          <div>
+            <h4><b>06</b> INTERPRET</h4>
+            <p class="m-desc">Define acoustic objectives and user activities</p>
+            <p class="m-tag">Design rules R1 / R2 / R3</p>
+            <p class="m-x">Contextual types and design rules translate the findings into acoustic objectives (protect, recompose, gather) and operations: filter, introduce, react, transform and amplify.</p>
+          </div>
+        </li>
+        <li class="m-step">
+          <img src="assets/method/step7.jpg" width="440" height="440" loading="lazy" alt="Axonometric sketches of the three prototype families.">
+          <div>
+            <h4><b>07</b> GENERATE</h4>
+            <p class="m-desc">Develop multiple architectural alternatives</p>
+            <p class="m-tag">Barrier, Sequence and Gather systems</p>
+            <p class="m-x">Three prototype families respond to the objectives. Case 53 develops the Barrier family and Case 437 the Sequence family.</p>
+          </div>
+        </li>
+        </ol>
+      </div>
+    <p class="m-try"><a href="index.html">See the search evidence for Cases 53 and 437 and listen to the results</a></p>
+  </section>
+
+  <section class="method-sec" aria-labelledby="m-a">
+    <div class="case-head m-head">
+      <h2 id="m-a">DERIVING URBAN SOUNDSCAPES FROM SVI</h2>
+      <p class="tag">What does the urban environment tell us about the soundscape?</p>
+    </div>
+    <p class="desc">A closer look at how a street view image (SVI) becomes a listening scenario. Methodology adapted from Zhao et al. (2023), <i>Sensing urban soundscapes from street view imagery</i>.</p>
+    <ol class="a-cards">
+        <li class="a-card">
+          <p class="a-h"><span>1</span> SVI</p>
+          <div class="a-frame"><img src="assets/method/svi_svi.jpg" width="1000" height="969" loading="lazy" alt="A grid of street view images of spaces beneath elevated rail lines."></div>
+          <p class="a-cap">Collect georeferenced street-level imagery</p>
+          <p class="m-x">Each image records what a pedestrian sees at one sample point.</p>
+        </li>
+        <li class="a-card">
+          <p class="a-h"><span>2</span> SEMANTIC SEGMENTATION</p>
+          <div class="a-frame"><img src="assets/method/svi_seg.jpg" width="1000" height="781" loading="lazy" alt="Case 53 street view image beside its Mask2Former segmentation, with a table of feature shares and potential sounds."></div>
+          <p class="a-cap">Extract and quantify urban visual features</p>
+          <p class="m-x">For Case 53: vegetation and natural 39.63%, mobility 28.86%, viaduct and rail 10.99%, hardscape and built 5.07%.</p>
+        </li>
+        <li class="a-card">
+          <p class="a-h"><span>3</span> SOUND SOURCE</p>
+          <div class="a-frame"><img src="assets/method/svi_wheel.jpg" width="1000" height="986" loading="lazy" alt="Circular diagram linking visual sound features (vegetation, mobility, hardscape, pedestrian, viaduct) to sound sources."></div>
+          <p class="a-cap">Associate visual features with likely sound sources</p>
+          <p class="m-x">Vegetation suggests leaves rustling and birds; mobility suggests continuous traffic and tyre and road interaction; viaduct and rail suggest train approach, passage and rail friction.</p>
+        </li>
+        <li class="a-card">
+          <p class="a-h"><span>4</span> SOUNDSCAPE AUDIO</p>
+          <div class="a-frame"><img src="assets/method/svi_audio.jpg" width="1000" height="871" loading="lazy" alt="Waveform, spectrogram and temporal energy plots of a synthetic soundscape."></div>
+          <p class="a-cap">Reconstruct a site-specific acoustic scenario</p>
+          <p class="m-x">Likely sources are layered into a synthetic scenario and read through its waveform (when the sound changes), spectrogram (where the energy is) and temporal energy.</p>
+        </li>
+    </ol>
+    <p class="m-try"><a href="generate.html">Try a simplified version of steps 2 to 4 with your own photo</a></p>
+  </section>
+
+  <footer>
+    <p class="credit"><span>AR5801 | Semester 1 AY2026/2027 |</span> <span>UNDER-tones |</span> <span>Acoustic Search-to-Design</span></p>
+    <p class="byline">Connie Hoiyan Lam</p>
+  </footer>
+</main>
+</body>
+</html>

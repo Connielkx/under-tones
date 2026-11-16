@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UNDER-tones: Searching Urban Soundscapes</title>
+<meta name="description" content="Synthetic acoustic scenarios accompanying the AR5801 UNDER-tones search-to-design project: Case 53 Yishun and Case 437 Bukit Panjang.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+  <nav class="sitenav" aria-label="Site">
+    <a class="brand" href="index.html">UNDER-tones<span class="brand-sub">: Searching Urban Soundscapes</span></a>
+    <ul>
+      <li><a href="index.html" aria-current="page">Listen</a></li>
+      <li><a href="method.html">Method</a></li>
+      <li><a href="generate.html">Generate</a></li>
+    </ul>
+  </nav>
+  <header class="masthead">
+    <p class="kicker">AR5801 | SEMESTER 1 AY2026/2027</p>
+    <h1>UNDER-TONES: SEARCHING URBAN SOUNDSCAPES</h1>
+    <p class="subtitle">Listen to the soundscapes: synthetic acoustic scenarios accompanying the AR5801 search-to-design project.</p>
+    <p class="instruction">Select a case and press play. Headphones recommended.</p>
+  </header>
+
+  <section class="case case53" aria-labelledby="c53">
+    <div class="case-head">
+      <h2 id="c53">CASE 53 <span class="sep">|</span> YISHUN</h2>
+      <p class="tag">BARRIER | FILTER + INTRODUCE</p>
+    </div>
+    <p class="desc">A persistent roadside soundscape alongside the elevated MRT corridor, informing a protected resting environment.</p>
+    <div class="evidence">
+      <p class="ev-h">SEARCH EVIDENCE <span>Why this site was selected</span></p>
+      <div class="ev-imgs">
+        <figure><img src="assets/cases/case53_svi.jpg" width="782" height="677" loading="lazy" alt="Street view image of Case 53: a roadside verge with young trees in front of the elevated MRT viaduct."><figcaption>Street view image</figcaption></figure>
+        <figure><img src="assets/cases/case53_seg.jpg" width="782" height="677" loading="lazy" alt="Segmentation of the same image, with vegetation, road, viaduct and built surfaces shown as flat colour areas."><figcaption>Mask2Former segmentation</figcaption></figure>
+      </div>
+      <div class="ev-bar" aria-hidden="true"><span style="width:40%;background:#D5A6C8"></span><span style="width:29%;background:#C9E1B7"></span><span style="width:11%;background:#EFBEBB"></span><span style="width:15%;background:#F3F1EE"></span><span style="width:5%;background:#9CD0DB"></span></div>
+      <ul class="ev-legend"><li><i style="background:#D5A6C8"></i>Natural <b>40%</b></li><li><i style="background:#C9E1B7"></i>Mobility <b>29%</b></li><li><i style="background:#EFBEBB"></i>Rail <b>11%</b></li><li><i style="background:#F3F1EE"></i>Other <b>15%</b></li><li><i style="background:#9CD0DB"></i>Built <b>5%</b></li></ul>
+      <dl class="ev-facts"><div><dt>Setting</dt><dd>Covered walkway beside the elevated MRT, Yishun Avenue 2</dd></div><div><dt>Visual cluster</dt><dd>C3, rail-natural mix</dd></div><div><dt>Contextual type</dt><dd>Persistent roadside exposure</dd></div><div><dt>Acoustic challenge</dt><dd>0.86</dd></div><div><dt>Spatial feasibility</dt><dd>0.77</dd></div><div><dt>Recommended prototype family</dt><dd>Barrier</dd></div></dl>
+      <p class="ev-note"><a href="method.html">How the search works</a></p>
+    </div>
+    <p class="ba"><span>BEFORE</span> EXISTING CONDITION</p>
+    <figure class="player">
+      <figcaption><span class="label">Existing-condition synthetic audio</span> <span class="dur">0:30</span></figcaption>
+      <audio controls preload="metadata" data-src="audio/case53_existing_synthetic.mp3">
+        <source src="audio/case53_existing_synthetic.mp3" type="audio/mpeg">
+        Your browser cannot play this audio. <a href="audio/case53_existing_synthetic.mp3">Open the MP3 file</a>.
+      </audio>
+      <p class="missing" hidden>This recording could not be loaded. Please try again later.</p>
+      <p class="fallback">Player not working? <a href="audio/case53_existing_synthetic.mp3">Open the audio file directly</a>.</p>
+    </figure>
+    <p class="ba"><span>AFTER</span> PROPOSED CONDITION</p>
+    <p class="ba-desc">An interpretive listening scenario exploring roadside filtering and the introduction of localized sounds within the protected resting pockets.</p>
+    <figure class="player">
+      <figcaption><span class="label">Proposed-condition synthetic audio</span> <span class="dur">0:30</span></figcaption>
+      <audio controls preload="metadata">
+        <source src="audio/case53_proposed_synthetic.mp3" type="audio/mpeg">
+        Your browser cannot play this audio. <a href="audio/case53_proposed_synthetic.mp3">Open the MP3 file</a>.
+      </audio>
+      <p class="missing" hidden>This recording could not be loaded. Please try again later.</p>
+      <p class="fallback">Player not working? <a href="audio/case53_proposed_synthetic.mp3">Open the audio file directly</a>.</p>
+    </figure>
+  </section>
+
+  <section class="case case437" aria-labelledby="c437">
+    <div class="case-head">
+      <h2 id="c437">CASE 437 <span class="sep">|</span> BUKIT PANJANG</h2>
+      <p class="tag">SEQUENCE | REACT + TRANSFORM</p>
+    </div>
+    <p class="desc">A commuter corridor with intermittent overhead LRT events, informing a responsive sequential experience.</p>
+    <div class="evidence">
+      <p class="ev-h">SEARCH EVIDENCE <span>Why this site was selected</span></p>
+      <div class="ev-imgs">
+        <figure><img src="assets/cases/case437_svi.jpg" width="782" height="677" loading="lazy" alt="Street view image of Case 437: a covered linkway beneath the elevated LRT, with a pedestrian walking past a bin."><figcaption>Street view image</figcaption></figure>
+        <figure><img src="assets/cases/case437_seg.jpg" width="782" height="677" loading="lazy" alt="Segmentation of the same image, with the viaduct, built surfaces, vegetation and a person shown as flat colour areas."><figcaption>Mask2Former segmentation</figcaption></figure>
+      </div>
+      <div class="ev-bar" aria-hidden="true"><span style="width:11%;background:#D5A6C8"></span><span style="width:33%;background:#EFBEBB"></span><span style="width:12%;background:#F3F1EE"></span><span style="width:43%;background:#9CD0DB"></span><span style="width:1%;background:#F2D06B"></span></div>
+      <ul class="ev-legend"><li><i style="background:#D5A6C8"></i>Natural <b>11%</b></li><li><i style="background:#EFBEBB"></i>Rail <b>33%</b></li><li><i style="background:#F3F1EE"></i>Other <b>12%</b></li><li><i style="background:#9CD0DB"></i>Built <b>43%</b></li><li><i style="background:#F2D06B"></i>People <b>1%</b></li></ul>
+      <dl class="ev-facts"><div><dt>Setting</dt><dd>Covered linkway under the elevated LRT, Jelapang LRT, Bukit Panjang Ring Road</dd></div><div><dt>Visual cluster</dt><dd>C2, mobility-rail-natural mix</dd></div><div><dt>Contextual type</dt><dd>Mixed road and rail exposure</dd></div><div><dt>Acoustic challenge</dt><dd>0.49</dd></div><div><dt>Spatial feasibility</dt><dd>0.72</dd></div><div><dt>Recommended prototype family</dt><dd>Sequence</dd></div></dl>
+      <p class="ev-note"><a href="method.html">How the search works</a></p>
+    </div>
+    <p class="ba"><span>BEFORE</span> EXISTING CONDITION</p>
+    <figure class="player">
+      <figcaption><span class="label">Existing-condition synthetic audio</span> <span class="dur">0:30</span></figcaption>
+      <audio controls preload="metadata" data-src="audio/case437_existing_synthetic.mp3">
+        <source src="audio/case437_existing_synthetic.mp3" type="audio/mpeg">
+        Your browser cannot play this audio. <a href="audio/case437_existing_synthetic.mp3">Open the MP3 file</a>.
+      </audio>
+      <p class="missing" hidden>This recording could not be loaded. Please try again later.</p>
+      <p class="fallback">Player not working? <a href="audio/case437_existing_synthetic.mp3">Open the audio file directly</a>.</p>
+    </figure>
+    <p class="ba"><span>AFTER</span> PROPOSED CONDITION</p>
+    <p class="ba-desc">An interpretive scenario in which responsive architectural modules create a sequential acoustic experience during intermittent overhead LRT events.</p>
+    <figure class="player">
+      <figcaption><span class="label">Proposed-condition synthetic audio</span> <span class="dur">0:30</span></figcaption>
+      <audio controls preload="metadata">
+        <source src="audio/case437_proposed_synthetic.mp3" type="audio/mpeg">
+        Your browser cannot play this audio. <a href="audio/case437_proposed_synthetic.mp3">Open the MP3 file</a>.
+      </audio>
+      <p class="missing" hidden>This recording could not be loaded. Please try again later.</p>
+      <p class="fallback">Player not working? <a href="audio/case437_proposed_synthetic.mp3">Open the audio file directly</a>.</p>
+    </figure>
+    <section class="demo" aria-labelledby="sequence-demo-title">
+      <h3 id="sequence-demo-title">HOW THE SEQUENCE FAMILY WORKS</h3>
+      <p class="demo-sub">Demonstration: approaching LRT train</p>
+      <p class="demo-desc">As a train approaches, the Sequence family is intended to respond through a progression of modules along the commuter route. This demonstration illustrates the proposed timing and spatial sequence of the intervention.</p>
+      <p class="demo-prompt">Headphones recommended — press play to hear the demonstration.</p>
+      <figure class="media">
+        <video controls playsinline preload="metadata" poster="video/case437_sequence_poster.jpg" width="1920" height="1356">
+          <source src="video/case437_sequence_train_approach.mp4" type="video/mp4">
+          Your browser cannot play this video. <a href="video/case437_sequence_train_approach.mp4">Open the MP4 file</a>.
+        </video>
+        <p class="missing" hidden>This demonstration could not be loaded. Please try again later.</p>
+        <p class="fallback">Video not working? <a href="video/case437_sequence_train_approach.mp4">Open the demonstration directly</a>.</p>
+      </figure>
+    </section>
+  </section>
+
+  <footer>
+    <p class="method">These recordings are synthetic, modelled interpretations informed by project research. They are not field recordings or direct measurements of site sound-pressure levels.</p>
+    <p class="credit"><span>AR5801 | Semester 1 AY2026/2027 |</span> <span>UNDER-tones |</span> <span>Acoustic Search-to-Design</span></p>
+    <p class="byline">Connie Hoiyan Lam</p>
+  </footer>
+</main>
+<script>
+// Show a clear message instead of a dead player if an audio file is missing.
+document.querySelectorAll('figure.player, figure.media').forEach(function (fig) {
+  var audio = fig.querySelector('audio, video'), src = audio.querySelector('source');
+  function missing() { audio.hidden = true; fig.querySelector('.missing').hidden = false; }
+  src.addEventListener('error', missing);
+  audio.addEventListener('error', missing);
+});
+</script>
+</body>
+</html>

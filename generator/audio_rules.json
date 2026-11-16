@@ -1,0 +1,26 @@
+{
+  "_about": "Deterministic rules turning cues (from the image or described by the visitor) and visitor assumptions into a 30-second synthetic mix. Every stem is synthesised in the browser with the Web Audio API from seeded noise and oscillators; no recordings are used. Gains are linear, before the master limiter.",
+  "duration_s": 30,
+  "sample_rate": 44100,
+  "fade_in_s": 1.5,
+  "fade_out_s": 2.0,
+  "peak_target_dbfs": -1.0,
+  "rms_target_dbfs": -20.0,
+  "_level_note": "Final gain = the smaller of (peak target / peak) and (RMS target / RMS), so mixes stay roughly comparable to the case recordings and never clip.",
+  "stems": {
+    "city_hum":      { "label": "Distant urban hum", "when": "always (baseline for any urban photograph)", "gain": 0.064 },
+    "traffic_bed":   { "label": "Traffic bed", "when": "road or vehicle cue visible, or traffic activity set to low/medium/high",
+                       "gain": { "unknown": 0.135, "low": 0.09, "medium": 0.175, "high": 0.27 } },
+    "vehicle_passby":{ "label": "Vehicle pass-bys", "when": "same as traffic bed",
+                       "count": { "unknown": 2, "low": 1, "medium": 3, "high": 6 },
+                       "heavy_if": "heavy_vehicles cue visible: first pass-by becomes a bus/truck",
+                       "moto_if": "two_wheelers cue visible: second pass-by becomes a motorcycle" },
+    "leaves_wind":   { "label": "Leaves and wind", "when": "vegetation cue visible", "gain": { "visible": 0.085, "dominant": 0.155 } },
+    "birds":         { "label": "Occasional birds", "when": "vegetation cue visible (potential source associated with vegetation, not seen)", "calls": { "visible": 2, "dominant": 4 } },
+    "footsteps":     { "label": "Footsteps", "when": "pedestrian activity set to low/medium/high, or people cue visible when activity is unknown",
+                       "walkers": { "low": 1, "medium": 3, "high": 6, "unknown_visible": 2, "unknown_dominant": 3, "unknown_none": 0 } },
+    "rail_passby":   { "label": "Overhead train pass-by", "when": "ONLY when 'Rail nearby?' is set to yes", "count": 1, "start_s": 9, "length_s": 14 },
+    "reflections":   { "label": "Hard-surface reflections", "when": "always; amount follows built cue, reduced for open sky",
+                       "wet": { "none": 0.05, "visible": 0.12, "dominant": 0.22 }, "open_sky_factor": 0.6 }
+  }
+}

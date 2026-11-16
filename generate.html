@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Generate Your Own Soundscape | UNDER-tones: Searching Urban Soundscapes</title>
+<meta name="description" content="Upload a street photograph and hear an illustrative synthetic soundscape assembled from its visible features. Part of the AR5801 UNDER-tones project.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+  <nav class="sitenav" aria-label="Site">
+    <a class="brand" href="index.html">UNDER-tones<span class="brand-sub">: Searching Urban Soundscapes</span></a>
+    <ul>
+      <li><a href="index.html">Listen</a></li>
+      <li><a href="method.html">Method</a></li>
+      <li><a href="generate.html" aria-current="page">Generate</a></li>
+    </ul>
+  </nav>
+  <header class="masthead">
+    <p class="kicker">AR5801 | SEMESTER 1 AY2026/2027</p>
+    <h1>GENERATE YOUR OWN SOUNDSCAPE</h1>
+    <p class="subtitle">From street image to synthetic audio.</p>
+    <p class="snapshot">This is not the full-scale predictive model used in the UNDER-tones project. It is a snapshot of the process behind how it works: visual evidence, inferred sound-source categories, then a synthetic listening scenario. <a href="method.html">See the full method</a>.</p>
+  </header>
+
+  <section class="gen" id="generator" aria-label="Soundscape generator" aria-busy="false">
+    <p class="desc">Upload a photograph of an urban street. UNDER-tones identifies visible environmental features and uses them to assemble an illustrative 30-second soundscape. The result is an interpretation of potential sound sources, not a recording or acoustic prediction of the location.</p>
+    <ol class="g-steps" aria-label="Progress">
+      <li class="on" aria-current="step"><b>01</b> Upload</li>
+      <li><b>02</b> Analyze</li>
+      <li><b>03</b> Listen</li>
+    </ol>
+
+    <div class="g-step" id="g-step1">
+      <p class="ba"><span>01</span> UPLOAD</p>
+      <label class="g-drop" id="g-drop" for="g-file">
+        <span class="g-drop-main">Choose a street photograph</span>
+        <span class="g-drop-sub">JPG, PNG or WebP, up to 10 MB. Tap to use your photo library or camera.</span>
+        <input type="file" id="g-file" accept="image/jpeg,image/png,image/webp">
+      </label>
+      <figure class="g-view" id="g-view" hidden>
+        <div class="g-stage">
+          <img id="g-img" alt="Your uploaded street photograph">
+          <canvas id="g-ov" aria-hidden="true"></canvas>
+        </div>
+        <button type="button" class="g-link" id="g-replace">Replace image</button>
+      </figure>
+      <p class="g-msg" id="g-upload-err" role="alert"></p>
+    </div>
+
+    <fieldset class="g-step" id="g-step2" disabled>
+      <legend class="ba"><span>02</span> ANALYZE</legend>
+      <p class="g-note">Runs SegFormer-B0, a small street-scene model trained on the Cityscapes dataset, on your device. The first analysis downloads about 8 MB (model and runtime); later analyses reuse it.</p>
+      <div class="g-actions">
+        <button type="button" class="g-btn" id="g-analyze">ANALYZE IMAGE</button>
+        <button type="button" class="g-link" id="g-manual-btn">Describe the scene myself instead</button>
+      </div>
+      <p class="g-msg" id="g-analyze-status" role="status" aria-live="polite"></p>
+      <p class="g-mode" id="g-mode"></p>
+      <label class="g-opacity" id="g-opacity-wrap" hidden>Overlay opacity <input type="range" id="g-opacity" min="0" max="100" value="60"></label>
+      <div id="g-results" hidden>
+        <div class="g-bar" id="g-bar" aria-hidden="true"></div>
+        <ul class="g-legend" id="g-legend"></ul>
+        <p class="g-denom" id="g-denom"></p>
+        <details class="g-details"><summary>Model classes and how they are grouped</summary><ul class="g-classes" id="g-classes"></ul></details>
+        <p class="g-cues-h">Visual cues (what is visible, not what is audible)</p>
+        <ul class="g-cues" id="g-cues"></ul>
+      </div>
+      <div id="g-manual" hidden>
+        <p class="g-cues-h">What is visible in your photograph?</p>
+        <div class="g-manual-grid"></div>
+      </div>
+      <div class="g-assume">
+        <p class="g-cues-h">Your assumptions <span>(not detected from the image)</span></p>
+        <label class="g-sel"><span>Rail nearby?</span><select id="g-rail"><option value="unknown">Unknown</option><option value="yes">Yes</option><option value="no">No</option></select></label>
+        <label class="g-sel"><span>Traffic activity</span><select id="g-traffic"><option value="unknown">Unknown</option><option value="low">Low</option><option value="medium">Medium</option><option value="high">High</option></select></label>
+        <label class="g-sel"><span>Pedestrian activity</span><select id="g-peds"><option value="unknown">Unknown</option><option value="low">Low</option><option value="medium">Medium</option><option value="high">High</option></select></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="g-step" id="g-step3" disabled>
+      <legend class="ba"><span>03</span> LISTEN</legend>
+      <button type="button" class="g-btn" id="g-generate" disabled>GENERATE SYNTHETIC SOUNDSCAPE</button>
+      <p class="g-msg" id="g-status" role="status" aria-live="polite"></p>
+      <figure class="g-player" id="g-out" hidden>
+        <figcaption><span class="label">Your synthetic soundscape</span> <span class="dur">0:30</span></figcaption>
+        <audio id="g-audio" controls preload="auto"></audio>
+        <p class="fallback"><a id="g-download" download="UNDER-tones_synthetic_soundscape.wav" href="#">Download WAV</a> (headphones recommended)</p>
+      </figure>
+      <div class="g-summary" id="g-summary" hidden></div>
+    </fieldset>
+    <button type="button" class="g-link g-reset" id="g-reset">Try another image</button>
+    <noscript><p class="g-msg err">The generator needs JavaScript. The case recordings above work without it.</p></noscript>
+  </section>
+
+  <footer>
+    <p class="credit"><span>AR5801 | Semester 1 AY2026/2027 |</span> <span>UNDER-tones |</span> <span>Acoustic Search-to-Design</span></p>
+    <p class="byline">Connie Hoiyan Lam</p>
+  </footer>
+</main>
+<script src="soundscape-generator.js" defer></script>
+</body>
+</html>

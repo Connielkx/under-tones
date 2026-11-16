@@ -1,0 +1,32 @@
+{
+  "_about": "Maps the 19 Cityscapes labels output by SegFormer-B0 to the five UNDER feature categories, and sets the share thresholds used to call a cue 'visible' or 'dominant'. Shares are fractions of ALL pixels in the analysed (client-resized) image. Thresholds are UNDER demonstration choices, not calibrated values.",
+  "model": {
+    "id": "Xenova/segformer-b0-finetuned-cityscapes-768-768",
+    "original": "nvidia/segformer-b0-finetuned-cityscapes-768-768",
+    "dataset": "Cityscapes (19 classes)",
+    "weights": "onnx/model_quantized.onnx (8-bit, about 4.4 MB)",
+    "runtime": "Transformers.js 3.8.1 (ONNX Runtime Web, WebAssembly), loaded from cdn.jsdelivr.net",
+    "license": "NVIDIA SegFormer licence (non-commercial research and evaluation); Cityscapes dataset terms (non-commercial)",
+    "note": "Not the UNDER research model (Mask2Former Swin-L on Mapillary Vistas). Chosen because it runs on a phone."
+  },
+  "categories": {
+    "vegetation": { "name": "Vegetation / Natural", "colour": "#D5A6C8", "labels": ["vegetation", "terrain"] },
+    "mobility":   { "name": "Road / Mobility",      "colour": "#C9E1B7", "labels": ["road", "sidewalk", "car", "truck", "bus", "motorcycle", "bicycle", "rider"] },
+    "rail":       { "name": "Rail / Infrastructure", "colour": "#EFBEBB", "labels": ["train", "pole", "fence", "traffic light", "traffic sign"] },
+    "built":      { "name": "Built",                "colour": "#9CD0DB", "labels": ["building", "wall"] },
+    "people":     { "name": "People",               "colour": "#F2D06B", "labels": ["person"] },
+    "other":      { "name": "Other", "colour": "#F3F1EE", "labels": ["sky"], "unmapped": true, "note": "Sky; no sound source is assigned" }
+  },
+  "cues": {
+    "vegetation":     { "text": "Vegetation visible",        "labels": ["vegetation", "terrain"], "visible": 0.03, "dominant": 0.25 },
+    "road":           { "text": "Road or footpath visible",  "labels": ["road", "sidewalk"], "visible": 0.05, "dominant": 0.25 },
+    "vehicles":       { "text": "Vehicles visible",          "labels": ["car", "truck", "bus", "motorcycle", "bicycle", "rider"], "visible": 0.005, "dominant": 0.08 },
+    "heavy_vehicles": { "text": "Bus or truck visible",      "labels": ["truck", "bus"], "visible": 0.005 },
+    "two_wheelers":   { "text": "Motorcycle or bicycle visible", "labels": ["motorcycle", "bicycle", "rider"], "visible": 0.003 },
+    "people":         { "text": "People visible",            "labels": ["person"], "visible": 0.003, "dominant": 0.05 },
+    "built":          { "text": "Buildings or walls visible", "labels": ["building", "wall"], "visible": 0.10, "dominant": 0.40 },
+    "street_infra":   { "text": "Poles, fences or signals visible", "labels": ["pole", "fence", "traffic light", "traffic sign"], "visible": 0.01 },
+    "rail_vehicle":   { "text": "Possible rail vehicle (model label 'train')", "labels": ["train"], "visible": 0.005, "note": "Shown as a cue only. Never adds a train event by itself; viaducts are usually labelled 'building' or 'wall' by this model." },
+    "open_sky":       { "text": "Open sky",                  "labels": ["sky"], "visible": 0.25 }
+  }
+}
