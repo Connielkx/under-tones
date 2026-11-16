@@ -180,6 +180,9 @@ The brief's FastAPI route (`generator-service/`) was not built: there is nowhere
 
 ## Live site (17 Nov 2026)
 - **Address:** https://connielkx.github.io/under-tones/ (repository: github.com/Connielkx/under-tones, branch `main`, GitHub Pages from `/ (root)`).
-- **QR code:** in `qr/` as SVG, PNG and PDF, plain and labelled ("SCAN TO LISTEN: UNDER-TONES"). Every version was checked by decoding it back to the address above.
+- **QR code:** in `qr/`, plain and labelled ("SCAN TO LISTEN: UNDER-TONES").
+  - **Formats:** vector SVG and PDF, drawn as one merged path so no hairline seams appear in InDesign, plus 6000 px PNGs tagged at 600 dpi.
+  - **Colour and error correction:** pure black on white, error correction level H (still scans with about 30% of the code damaged or covered).
+  - **Checked:** every version decodes back to the address above.
 - **Updating the site:** edit the files and upload them to the same repository; the address and QR code stay the same.
 - **Claude's access:** the Claude GitHub App has access to this repository only. Remove it any time in GitHub Settings → Applications.
