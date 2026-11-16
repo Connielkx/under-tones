@@ -175,3 +175,11 @@ The brief's FastAPI route (`generator-service/`) was not built: there is nowhere
 - **Category colours** on the Generate page now use the panel 03C segmentation palette: Natural #D5A6C8, Mobility #C9E1B7, Rail #EFBEBB, Built #9CD0DB, People #F2D06B.
 - **Data note:** the screening manifest gives Case 437 built 51.2%. Panel 03C shows Built 43% and Other 12%, most likely because sidewalk pixels are grouped differently. The site follows the panel.
 - **Image sources:** in `assets/method/` and `assets/cases/`. The working crops were moved to `Final/web/_to_delete/_build_thumbs`.
+
+---
+
+## Live site (17 Nov 2026)
+- **Address:** https://connielkx.github.io/under-tones/ (repository: github.com/Connielkx/under-tones, branch `main`, GitHub Pages from `/ (root)`).
+- **QR code:** in `qr/` as SVG, PNG and PDF, plain and labelled ("SCAN TO LISTEN: UNDER-TONES"). Every version was checked by decoding it back to the address above.
+- **Updating the site:** edit the files and upload them to the same repository; the address and QR code stay the same.
+- **Claude's access:** the Claude GitHub App has access to this repository only. Remove it any time in GitHub Settings → Applications.
