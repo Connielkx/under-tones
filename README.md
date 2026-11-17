@@ -27,7 +27,7 @@ under-sound-archive/
 | `audio/case53_proposed_synthetic.mp3` | `Internal_Review/AR5801_post_intervention_audio/audio_wav/Case53B_FILTER_INTRODUCE_after.wav` (53B: FILTER + INTRODUCE, filtered traffic + wind chimes) | `4b9f04aa…b8563` | 0:30 |
 | `audio/case437_existing_synthetic.mp3` | `Internal_Review/synthetic_baselines_53_437/audio/case437_baseline.wav` | `2db7877b…ae64962d` | 0:30 |
 | `audio/case437_proposed_synthetic.mp3` | `Internal_Review/AR5801_post_intervention_audio/audio_wav/case437_variations/Case437_V4_piano_melody_after.wav` (REACT + TRANSFORM, V4 piano melody) | `a3c00273…be115fd31` | 0:30 |
-| `video/case437_sequence_train_approach.mp4` | `Final/9. Video Experience/B_PrototypeB_audio_synced_rev02.mp4` (copied byte-for-byte, not re-encoded) | `a08f1512…bee92d` | 0:28.8 |
+| `video/case437_sequence_train_approach.mp4` | `Final/9. Video Experience/B_PrototypeB_audio_synced_rev08.mp4` (copied byte-for-byte, not re-encoded) | `cb9f53d8…` | 0:28.8 |
 
 - **Source set:** the updated 30-second set (README_methodology.md in that folder). It is the one the frequency analysis and post-intervention mixes use. The older 60-second `synthetic_baselines/` set is superseded and not used here.
 - **Encoding:** MP3, 192 kbps, 44.1 kHz stereo, 0:30.
@@ -43,7 +43,7 @@ under-sound-archive/
 - **Choices to confirm:**
   - **Case 437:** uses V4 piano melody, the version copied to `Internal_Review/` and used in the post-intervention soundscape plans. The documented base scenario `Case437_REACT_TRANSFORM_after.wav` (piano chords) is an alternative. To swap, encode it to the same file name.
   - **Case 53:** uses the documented 53B master. A later `Internal_Review/Sound/Case53B_FILTER_INTRODUCE_after_black_traffic_reduced.mp4` (5 Nov, −24.1 LUFS) exists, but only as a black-screen MP4 with no WAV master or documentation, so it was not used.
-- **Video:** the Prototype B (Sequence) rev02 demonstration: 28.8 s, 25 fps, H.264 High 1920×1356, AAC stereo, starts playing before it fully downloads, 3.5 MB.
+- **Video:** the Prototype B (Sequence) rev08 demonstration (16 stills, with the rev02 audio): 28.8 s, 25 fps, H.264 High 1920×1356, AAC stereo, starts playing before it fully downloads, 4.4 MB.
   - It is a conceptual visualisation made from 12 still images (2.4 s holds) with a synthesised soundtrack: train approach, stop and departure, plus an original bell score from the modules.
   - It is not footage and not an acoustic simulation; the frames carry that caption.
   - The module sound in the video differs from the V4 proposed audio, and the page says so.
@@ -186,3 +186,10 @@ The brief's FastAPI route (`generator-service/`) was not built: there is nowhere
   - **Checked:** every version decodes back to the address above.
 - **Updating the site:** edit the files and upload them to the same repository; the address and QR code stay the same.
 - **Claude's access:** the Claude GitHub App has access to this repository only. Remove it any time in GitHub Settings → Applications.
+
+
+---
+
+## Video update (17 Nov 2026)
+- `video/case437_sequence_train_approach.mp4` is now the rev08 stop-motion (16 frames, 28.8 s, same audio), replacing rev02. The filename is unchanged, so the page and QR code are unaffected.
+- **Poster:** remade from the new video at 6.0 s.
